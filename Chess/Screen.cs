@@ -4,7 +4,6 @@ namespace Chess
 {
     public class Screen
     {
-        public static void SetBackgroundColorForError() => Console.BackgroundColor = ConsoleColor.Black;
         public static void SetFontConsole() => Console.OutputEncoding = System.Text.Encoding.UTF8;
         public static void PrintBoard(Board board)
         {
