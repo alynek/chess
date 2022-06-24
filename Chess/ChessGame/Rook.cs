@@ -8,7 +8,7 @@ namespace Chess.ChessGame
 
         public override string ToString()
         {
-            return ColorIsWhite(Color) ? " \u2656 " : "\u265c";
+            return ColorIsWhite(Color) ? " \u2656 " : " \u265c ";
         }
     }
 }
