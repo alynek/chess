@@ -7,8 +7,7 @@
 *.sln.docstates
 .vs
 .vscode
-
-Visual Studio 2022/Visualizers
+.Visual Studio 2022
 
 # Build results
 
