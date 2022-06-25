@@ -15,7 +15,7 @@
 
         public void PutPiece(Piece piece, Position position)
         {
-            if (!IsPieceInAValidPosition(position)) 
+            if (IsPieceInAInvalidPosition(position)) 
                 throw new BoardException($"There is already a piece on position: {position}");
 
             piece.Position = position;
@@ -35,7 +35,7 @@
                 && position.Column < Columns;
         }
 
-        public bool IsPieceInAValidPosition(Position position)
+        public bool IsPieceInAInvalidPosition(Position position)
         {
             if (!IsValidPosition(position)) throw new BoardException("Invalid position!");
 
