@@ -22,6 +22,16 @@
             _pieces[position.Row, position.Column] = piece;
         }
 
+        public Piece RemovePiece(Position position)
+        {
+            if (!IsPieceInAInvalidPosition(position)) return null;
+
+            Piece piece = GetPieceByPosition(position);
+            piece.Position = null;
+            _pieces[position.Row, position.Column] = null;
+            return piece;
+        }
+
         public Piece GetPieceByPosition(Position position)
         {
             return _pieces[position.Row, position.Column];
