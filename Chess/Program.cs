@@ -11,19 +11,22 @@ namespace Chess
 
             try
             {
-                Board board = new Board();
+                ChessMatch match = new ChessMatch();
 
-                board.PutPiece(new King(Color.BLACK, board), new Position(1, 2));
-                board.PutPiece(new King(Color.WHITE, board), new Position(1, 3));
-                board.PutPiece(new Rook(Color.WHITE, board), new Position(2, 4));
-                board.PutPiece(new Rook(Color.BLACK, board), new Position(7, 4));
+                while(!match.finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(match.board);
 
-                ChessPosition chessPosition = new ChessPosition('a', 1);
-                chessPosition.GetPositionByInput();
-                
+                    Console.Write("origem");
+                    Position source = Screen.ReadChessPosition().GetPositionByInput();
 
-                Screen.PrintBoard(board);
-                Console.ReadLine();
+                    Console.Write("destino");
+                    Position target = Screen.ReadChessPosition().GetPositionByInput();
+
+                    match.MakeMove(source, target);
+
+                }
             }
             catch(BoardException e)
             {

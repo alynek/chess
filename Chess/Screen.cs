@@ -1,4 +1,5 @@
 ﻿using Chess.BoardGame;
+using Chess.ChessGame;
 
 namespace Chess
 {
@@ -15,7 +16,7 @@ namespace Chess
             {
                 PrintColumnNumbers(board.Rows, i);
 
-                for(int j = 0; j < board.Columns; j++)
+                for (int j = 0; j < board.Columns; j++)
                 {
                     Console.Write(board._pieces[i, j]?.ToString() ?? " - ");
                 }
@@ -23,5 +24,14 @@ namespace Chess
             }
             PrintRowLetters();
         }
+
+        public static ChessPosition ReadChessPosition()
+        {
+            string inputValue = Console.ReadLine();
+            char column = inputValue.ToCharArray(0, 1)[0];
+            int row = int.Parse(inputValue.Substring(1, 1));
+            return new ChessPosition(column, row);
+        }
+
     }
 }
