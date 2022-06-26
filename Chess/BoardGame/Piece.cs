@@ -16,5 +16,7 @@
         }
 
         public bool ColorIsWhite(Color color) =>  color.Equals(Color.WHITE);
+
+        public void IncrementMoveQuantity() => MoveQuantity++;
     }
 }
