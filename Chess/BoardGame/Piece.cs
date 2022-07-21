@@ -1,6 +1,6 @@
 ﻿namespace Chess.BoardGame
 {
-    public class Piece
+    public abstract class Piece
     {
         public Position Position { get; set; }
         public Color Color { get; protected set; }
@@ -18,5 +18,7 @@
         public bool ColorIsWhite(Color color) =>  color.Equals(Color.WHITE);
 
         public void IncrementMoveQuantity() => MoveQuantity++;
+
+        public abstract bool[,] PossibleMoves();
     }
 }
